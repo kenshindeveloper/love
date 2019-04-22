@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/menu_1.gd" type="Script" id=1]
+[ext_resource path="res://sprites/background_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/background_0.png" type="Texture" id=3]
+[ext_resource path="res://fonts/AGITPM__.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/handler_floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/BMmini.TTF" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 3
+outline_color = Color( 0.258824, 0.160784, 0.211765, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 3
+outline_color = Color( 0.258824, 0.160784, 0.211765, 1 )
+font_data = ExtResource( 6 )
+
+[node name="menu_1" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="bacground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="background_title" type="TextureRect" parent="."]
+anchor_right = 1.0
+margin_top = 50.0
+margin_bottom = 117.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="title" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 37.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
+text = "andrea's"
+align = 1
+valign = 1
+
+[node name="handler_floor" parent="." instance=ExtResource( 5 )]
+
+[node name="male" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.5
+margin_top = -19.0
+margin_right = 60.5
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+text = "male"
+flat = true
+
+[node name="female" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = 29.0
+margin_right = 60.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+text = "female"
+flat = true
+
+[node name="back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = 79.0
+margin_right = 60.0
+margin_bottom = 117.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+text = "back"
+flat = true
+
+[connection signal="pressed" from="male" to="." method="_on_male_pressed"]
+[connection signal="pressed" from="female" to="." method="_on_female_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
