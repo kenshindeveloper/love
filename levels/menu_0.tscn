@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/menu_0.gd" type="Script" id=1]
 [ext_resource path="res://sprites/background_1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/AGITPM__.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/handler_floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/BMmini.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://sounds/main.ogg" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -60,12 +61,14 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -81.5
 margin_top = -18.5
-margin_right = 81.5
-margin_bottom = 18.5
+margin_right = 90.5
+margin_bottom = 19.5
+focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
 custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
 custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+enabled_focus_mode = 0
 text = "new game"
 flat = true
 
@@ -78,12 +81,17 @@ margin_left = -81.5
 margin_top = 34.0
 margin_right = 90.5
 margin_bottom = 72.0
+focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
 custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
 custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+enabled_focus_mode = 0
 text = "exit"
 flat = true
 
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 [connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

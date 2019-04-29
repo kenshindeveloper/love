@@ -5,7 +5,7 @@
 [ext_resource path="res://sounds/jump.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.55012, 7.68486 )
+extents = Vector2( 2.99973, 7.68486 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -41,9 +41,10 @@ tracks/0/keys = {
 "values": [ Rect2( 64, 32, 32, 32 ), Rect2( 64, 32, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "jump_andre"
 length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("sprite:region_rect")
 tracks/0/interp = 1
@@ -57,7 +58,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 96, 32, 32 ), Rect2( 0, 96, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 0.4
 loop = true
 step = 0.0
@@ -98,20 +99,19 @@ script = ExtResource( 1 )
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 64, 0, 32, 32 )
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1.73529 )
+position = Vector2( -0.37735, -1.73529 )
 shape = SubResource( 1 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
-anims/jump_andre = SubResource( 7 )
-anims/run = SubResource( 8 )
+anims/jump_andre = SubResource( 4 )
+anims/run = SubResource( 5 )
 anims/run_andre = SubResource( 6 )
 
-[node name="sound" type="AudioStreamPlayer" parent="."]
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-

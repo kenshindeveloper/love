@@ -13,13 +13,22 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 func _physics_process(delta):
-	if global.is_running:
+	if not global.game_end and global.is_running:
 		count_timer += delta
 		if count_timer > time_trigger:
 			build()
 			count_timer = 0.0
 			time_trigger = (randi() % 2) + 1
 		update()
+	
+#	if global.game_end:
+#		clean_element()
+
+func clean_element():
+	for elements in list_tokens:
+		for element in elements:
+			element.queue_free()
+	list_tokens.clear()
 
 func build():
 	var diff_x = screen_size.x + sprite_width*2

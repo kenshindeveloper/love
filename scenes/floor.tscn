@@ -16,4 +16,3 @@ region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-

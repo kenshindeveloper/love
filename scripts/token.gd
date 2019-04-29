@@ -14,7 +14,7 @@ func _physics_process(delta):
 		flag_collision = true
 		
 func _on_token_body_entered(body):
-	if global.is_running:
+	if not global.game_end and global.is_running:
 		$sound.play()
 		global.reset()
 		global.is_running = false

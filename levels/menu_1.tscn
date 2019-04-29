@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/menu_1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/background_1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/AGITPM__.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/handler_floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/BMmini.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://sounds/main.ogg" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -62,10 +63,12 @@ margin_left = -60.5
 margin_top = -19.0
 margin_right = 60.5
 margin_bottom = 19.0
+focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
 custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
 custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+enabled_focus_mode = 0
 text = "male"
 flat = true
 
@@ -78,10 +81,12 @@ margin_left = -60.0
 margin_top = 29.0
 margin_right = 60.0
 margin_bottom = 67.0
+focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
 custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
 custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+enabled_focus_mode = 0
 text = "female"
 flat = true
 
@@ -94,13 +99,17 @@ margin_left = -60.0
 margin_top = 79.0
 margin_right = 60.0
 margin_bottom = 117.0
+focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.662745, 0.376471, 0.298039, 1 )
 custom_colors/font_color_hover = Color( 0.862745, 0.643137, 0.337255, 1 )
 custom_colors/font_color_pressed = Color( 0.862745, 0.643137, 0.337255, 1 )
+enabled_focus_mode = 0
 text = "back"
 flat = true
 
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
 [connection signal="pressed" from="male" to="." method="_on_male_pressed"]
 [connection signal="pressed" from="female" to="." method="_on_female_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

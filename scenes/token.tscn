@@ -5,7 +5,7 @@
 [ext_resource path="res://sounds/hit.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.3972, 13.1941 )
+extents = Vector2( 8.64455, 12.1928 )
 
 [node name="token" type="Area2D"]
 script = ExtResource( 1 )
@@ -20,5 +20,4 @@ shape = SubResource( 1 )
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-
 [connection signal="body_entered" from="." to="." method="_on_token_body_entered"]

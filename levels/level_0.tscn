@@ -7,14 +7,14 @@
 [ext_resource path="res://scenes/handler_floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/handler_token.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/gui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sounds/bensound-jazzyfrenchy.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sounds/girl.ogg" type="AudioStream" id=8]
 
 [node name="level_0" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 320.362, 239.767 )
-scale = Vector2( 19.8682, 14.9303 )
+position = Vector2( 323.593, 241.706 )
+scale = Vector2( 20.0701, 15.0515 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 96, 96, 32, 32 )
@@ -37,5 +37,4 @@ margin_bottom = 480.0
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
-autoplay = true
-
+bus = "music"

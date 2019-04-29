@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/girl.ogg-b4f779b22ed9579639dc1b45529f911b.oggstr"
+
+[deps]
+
+source_file="res://sounds/girl.ogg"
+dest_files=[ "res://.import/girl.ogg-b4f779b22ed9579639dc1b45529f911b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

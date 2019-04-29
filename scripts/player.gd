@@ -8,11 +8,22 @@ export (int) var gravity = 1200
 
 var velocity = Vector2(0, 0)
 var jumping = false
+var can_jump = false
+
+func _ready():
+	$sound.pitch_scale = 0.9
+	$sound.attenuation = 0.2
+	$sound.bus = "jump"
 
 func _physics_process(delta):
 	movement(delta)
 	animation()
 
+func _input(event):
+	can_jump = false
+	if event is InputEventMouseButton and event.position.y > 80:
+		can_jump = true
+	
 func movement(delta):
 	if is_on_floor():
 		if not global.is_girl:
@@ -27,7 +38,7 @@ func movement(delta):
 			current_animation = "jump_andre"
 	
 	var jump = false
-	if global.is_running:
+	if not global.game_end and global.is_running and can_jump:
 		jump = Input.is_action_pressed("key_jump")
 	
 	if jump and is_on_floor():
